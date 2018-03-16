@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="文件下载是日常开发中常见的需求，当我们从服务器获取到URL地址的时候便需要使用js来实现下载的功能，而只将a标签href的值设为需要下载的文件地址对于图片是不适用的。此时，可以HTML5中对a标签添加了download属性，为我们下载文件与图片提供了很大的帮助。  遗憾的是，只有Firefox与chrome支持download属性">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="积累一些常用的去除input浏览器自带的默认样式，select以及其他属性修改默认样式尚在探索中。尤其是select样式= =感觉好像只能模拟select标签，无法直接美化其样式  1234567891011121314151617181920212223242526272829303132333435/* 去除上下小箭头 */input[type=&quot;number&quot;] &amp;#123;    -mo">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js实现文件下载">
-<meta property="og:url" content="http://tianlinux21.github.io/2017/05/13/file-download/index.html">
+<meta property="og:title" content="常用的input默认样式重置">
+<meta property="og:url" content="http://tianlinux21.github.io/2018/03/16/custom-css-reset/index.html">
 <meta property="og:site_name" content="Tony&#39; s home">
-<meta property="og:description" content="文件下载是日常开发中常见的需求，当我们从服务器获取到URL地址的时候便需要使用js来实现下载的功能，而只将a标签href的值设为需要下载的文件地址对于图片是不适用的。此时，可以HTML5中对a标签添加了download属性，为我们下载文件与图片提供了很大的帮助。  遗憾的是，只有Firefox与chrome支持download属性">
-<meta property="og:updated_time" content="2017-08-24T10:05:57.000Z">
+<meta property="og:description" content="积累一些常用的去除input浏览器自带的默认样式，select以及其他属性修改默认样式尚在探索中。尤其是select样式= =感觉好像只能模拟select标签，无法直接美化其样式  1234567891011121314151617181920212223242526272829303132333435/* 去除上下小箭头 */input[type=&quot;number&quot;] &amp;#123;    -mo">
+<meta property="og:updated_time" content="2018-03-16T02:20:59.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js实现文件下载">
-<meta name="twitter:description" content="文件下载是日常开发中常见的需求，当我们从服务器获取到URL地址的时候便需要使用js来实现下载的功能，而只将a标签href的值设为需要下载的文件地址对于图片是不适用的。此时，可以HTML5中对a标签添加了download属性，为我们下载文件与图片提供了很大的帮助。  遗憾的是，只有Firefox与chrome支持download属性">
+<meta name="twitter:title" content="常用的input默认样式重置">
+<meta name="twitter:description" content="积累一些常用的去除input浏览器自带的默认样式，select以及其他属性修改默认样式尚在探索中。尤其是select样式= =感觉好像只能模拟select标签，无法直接美化其样式  1234567891011121314151617181920212223242526272829303132333435/* 去除上下小箭头 */input[type=&quot;number&quot;] &amp;#123;    -mo">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://tianlinux21.github.io/2017/05/13/file-download/"/>
+  <link rel="canonical" href="http://tianlinux21.github.io/2018/03/16/custom-css-reset/"/>
 
 
 
 
 
-  <title>js实现文件下载 | Tony' s home</title>
+  <title>常用的input默认样式重置 | Tony' s home</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2017/05/13/file-download/">
+    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2018/03/16/custom-css-reset/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tian">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js实现文件下载</h1>
+          <h1 class="post-title" itemprop="name headline">常用的input默认样式重置</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T20:35:25+08:00">
-                2017-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T10:07:08+08:00">
+                2018-03-16
               </time>
             
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  295
+                  230
                 </span>
               
 
@@ -379,31 +379,10 @@
       
 
       
-        <p>文件下载是日常开发中常见的需求，当我们从服务器获取到URL地址的时候便需要使用js来实现下载的功能，而只将a标签href的值设为需要下载的文件地址对于图片是不适用的。此时，可以HTML5中对a标签添加了download属性，为我们下载文件与图片提供了很大的帮助。</p>
-<blockquote>
-<p>遗憾的是，只有Firefox与chrome支持download属性</p>
+        <blockquote>
+<p>积累一些常用的去除input浏览器自带的默认样式，select以及其他属性修改默认样式尚在探索中。尤其是select样式= =感觉好像只能模拟select标签，无法直接美化其样式</p>
 </blockquote>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> url = <span class="string">'xxxx'</span>;   <span class="comment">// ajax 请求到的文件链接地址</span></div><div class="line"><span class="keyword">let</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">a.setAttribute(<span class="string">'href'</span>, url + name);</div><div class="line">a.setAttribute(<span class="string">'download'</span>, <span class="string">''</span>);</div><div class="line"><span class="keyword">let</span> evObj = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</div><div class="line">evObj.initEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>);</div><div class="line">a.dispatchEvent(evObj);</div></pre></td></tr></table></figure>
-<p>这其中使用了createEvent()方法创建了新的Event对象，createEvent对象语法如下:</p>
-<blockquote>
-<p>createEvent(eventType)</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>eventType</td>
-<td>想获取的 Event 对象的事件模块名。</td>
-</tr>
-</tbody>
-</table>
-<p>该方法将创建一种新的事件类型，该类型由参数 eventType 指定。注意，该参数的值不是要创建的事件接口的名称，而是定义那个接口的 DOM 模块的名称。<br>具体参数可以查看<a href="http://www.w3school.com.cn/xmldom/met_document_createevent.asp" target="_blank" rel="external">w3School</a><br>关于自定义Event对象，有很多相关的文章，感兴趣的可以自行搜索哦</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 去除上下小箭头 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="number"]</span> &#123;</div><div class="line">    <span class="attribute">-moz-appearance</span>: textfield;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="number"]</span><span class="selector-pseudo">::-webkit-inner-spin-button</span>,</div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="number"]</span><span class="selector-pseudo">::-webkit-outer-spin-button</span> &#123;</div><div class="line">    <span class="comment">/*visibility: hidden;*/</span></div><div class="line">    <span class="attribute">-webkit-appearance</span>: none;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 搜索去除默认样式 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="search"]</span> &#123;</div><div class="line">	<span class="attribute">-webkit-appearance</span>: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="search"]</span><span class="selector-pseudo">::-webkit-search-cancel-button</span>,</div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="search"]</span><span class="selector-pseudo">::-webkit-search-decoration</span> &#123;</div><div class="line">	<span class="attribute">-webkit-appearance</span>: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 记住密码去除黄色背景 */</span></div><div class="line"><span class="comment">/* 方法一&amp;二同时使用效果更佳，只使用一个会有兼容性问题 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-autofill</span> &#123;</div><div class="line">    <span class="comment">/* method 1 */</span></div><div class="line">    <span class="attribute">transition</span>: background-color <span class="number">50000s</span> ease-in-out <span class="number">0s</span>;    <span class="comment">/* 去掉黄色背景 */</span></div><div class="line">    <span class="comment">/* method 2 */</span></div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1000px</span> white inset;    <span class="comment">/* 覆盖黄色背景 */</span></div><div class="line">    <span class="attribute">-webkit-text-fill-color</span>: <span class="number">#3a3a3a</span>;    <span class="comment">/* 希望的输入框颜色 */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 去除密码框输入后的小眼睛 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="password"]</span><span class="selector-pseudo">::-ms-reveal</span> &#123;</div><div class="line">    <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -433,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -446,15 +425,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/12/content-mismatch/" rel="next" title="解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题">
+                <i class="fa fa-chevron-left"></i> 解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/13/border-double/" rel="prev" title="border double 快速实现三横线按钮">
-                border double 快速实现三横线按钮 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
