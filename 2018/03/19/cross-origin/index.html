@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：12018/03/12 11:36:52 [crit] 26908#">
-<meta name="keywords" content="nginx">
+<meta name="description" content="&amp;#8194;&amp;#8194;我们在使用iframe的时候常常会有子frame内部的页面控制父级页面退出登录或者一些其他的功能需求，但是常常会碰到这样的错误提示1Uncaught DOMException: Blocked a frame with origin &quot;http://www.xxxx.com&quot; from accessing a cross-origin frame. 如上所示，之前试过使">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题">
-<meta property="og:url" content="http://tianlinux21.github.io/2018/03/12/content-mismatch/index.html">
+<meta property="og:title" content="使用postMessage解决iframe跨域问题">
+<meta property="og:url" content="http://tianlinux21.github.io/2018/03/19/cross-origin/index.html">
 <meta property="og:site_name" content="Tony&#39; s home">
-<meta property="og:description" content="今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：12018/03/12 11:36:52 [crit] 26908#">
-<meta property="og:updated_time" content="2018-03-12T07:35:26.853Z">
+<meta property="og:description" content="&amp;#8194;&amp;#8194;我们在使用iframe的时候常常会有子frame内部的页面控制父级页面退出登录或者一些其他的功能需求，但是常常会碰到这样的错误提示1Uncaught DOMException: Blocked a frame with origin &quot;http://www.xxxx.com&quot; from accessing a cross-origin frame. 如上所示，之前试过使">
+<meta property="og:updated_time" content="2018-03-19T08:31:19.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题">
-<meta name="twitter:description" content="今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：12018/03/12 11:36:52 [crit] 26908#">
+<meta name="twitter:title" content="使用postMessage解决iframe跨域问题">
+<meta name="twitter:description" content="&amp;#8194;&amp;#8194;我们在使用iframe的时候常常会有子frame内部的页面控制父级页面退出登录或者一些其他的功能需求，但是常常会碰到这样的错误提示1Uncaught DOMException: Blocked a frame with origin &quot;http://www.xxxx.com&quot; from accessing a cross-origin frame. 如上所示，之前试过使">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://tianlinux21.github.io/2018/03/12/content-mismatch/"/>
+  <link rel="canonical" href="http://tianlinux21.github.io/2018/03/19/cross-origin/"/>
 
 
 
 
 
-  <title>解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题 | Tony' s home</title>
+  <title>使用postMessage解决iframe跨域问题 | Tony' s home</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2018/03/12/content-mismatch/">
+    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2018/03/19/cross-origin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tian">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题</h1>
+          <h1 class="post-title" itemprop="name headline">使用postMessage解决iframe跨域问题</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T11:44:20+08:00">
-                2018-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T16:05:05+08:00">
+                2018-03-19
               </time>
             
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  240
+                  692
                 </span>
               
 
@@ -379,12 +379,20 @@
       
 
       
-        <p>今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2018/03/12 11:36:52 [crit] 26908#0: *82084 open() &quot;/usr/local/var/run/nginx/proxy_temp/8/02/0000000028&quot; failed (13: Permission denied) while reading upstream, client: 192.168.24.112, server: 192.168.24.112, request: &quot;GET /dev/app.js HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8031/app.js&quot;, host: &quot;192.168.24.112:8083&quot;, referrer: &quot;http://192.168.24.112:8083/dev/&quot;</div></pre></td></tr></table></figure></p>
-<p>如错误日志所示，没有proxy_temp读写权限所导致的问题；后来查了一下，因为nginx会缓存大文件到proxy_temp目录中所以没有读写权限就会出现该错误。<br>对应的解决方法：</p>
-<ul>
-<li>使用chmod去将proxy_temp的权限改为rwx</li>
-<li>使用chown去修改目录的owner为root，之后使用管理员权限运行nginx(sudo nginx)</li>
-</ul>
+        <p>&#8194;&#8194;我们在使用iframe的时候常常会有子frame内部的页面控制父级页面退出登录或者一些其他的功能需求，但是常常会碰到这样的错误提示<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught DOMException: Blocked a frame <span class="keyword">with</span> origin <span class="string">"http://www.xxxx.com"</span> <span class="keyword">from</span> accessing a cross-origin frame.</div></pre></td></tr></table></figure></p>
+<p>如上所示，之前试过使用网上所说的window.top.location.href来直接修改外部链接结果失败了。今天碰巧看到了postMessage，发现可以用来解决这个问题。<br><a id="more"></a></p>
+<blockquote>
+<p>window.postMessage() 方法可以安全地实现跨源通信。通常，对于两个不同页面的脚本，只有当执行它们的页面位于具有相同的协议（通常为https），端口号（443为https的默认值），以及主机  (两个页面的模数 Document.domain设置为相同的值) 时，这两个脚本才能相互通信。window.postMessage() 方法提供了一种受控机制来规避此限制，只要正确的使用，这种方法就很安全。——引自MDN</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 子页面(此处只考虑一层iframe的情况，如果嵌套多层，则使用window.top指向最外层)</span></div><div class="line"><span class="built_in">window</span>.top.postMessage(<span class="string">'xxx'</span>, <span class="string">'*'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 父页面, top</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(e.data);    <span class="comment">// e.data-&gt;'xxx' 即子页面通过postMessage传递过来的值</span></div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p><strong>在iframe中只需上述代码即可完成跨域问题，关键是对于iframe/frames可以兼容至IE8！其他场景下使用postMessage时IE兼容性较差，可以说是完全不支持的，所以使用时需要根据实际情况。</strong></p>
+<p>下面是postMessage的语法</p>
+<blockquote>
+<p>otherWindow.postMessage(message, targetOrigin, [transfer]);</p>
+</blockquote>
+<h4 id="otherWindow"><a href="#otherWindow" class="headerlink" title="otherWindow"></a>otherWindow</h4><p>&#8194;&#8194;其他窗口的一个引用，比如iframe的contentWindow属性、执行window.open返回的窗口对象、或者是命名过或数值索引的window.frames。</p>
+<h4 id="message"><a href="#message" class="headerlink" title="message"></a>message</h4><p>&#8194;&#8194;将要发送到其他 window的数据。它将会被结构化克隆算法序列化。这意味着你可以不受什么限制的将数据对象安全的传送给目标窗口而无需自己序列化</p>
+<h4 id="targetOrigin"><a href="#targetOrigin" class="headerlink" title="targetOrigin"></a>targetOrigin</h4><p>&#8194;&#8194;通过窗口的origin属性来指定哪些窗口能接收到消息事件，其值可以是字符串”*“（表示无限制）或者一个URI。在发送消息的时候，如果目标窗口的协议、主机地址或端口这三者的任意一项不匹配targetOrigin提供的值，那么消息就不会被发送；只有三者完全匹配，消息才会被发送。这个机制用来控制消息可以发送到哪些窗口；如果你明确的知道消息应该发送到哪个窗口，那么请始终提供一个有确切值的targetOrigin，而不是<em>。</em>不提供确切的目标将导致数据泄露到任何对数据感兴趣的恶意站点*</p>
 
       
     </div>
@@ -414,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -427,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/29/num-symbol/" rel="next" title="数字添加千分符">
-                <i class="fa fa-chevron-left"></i> 数字添加千分符
+              <a href="/2018/03/16/custom-css-reset/" rel="next" title="常用的input默认样式重置">
+                <i class="fa fa-chevron-left"></i> 常用的input默认样式重置
               </a>
             
           </div>
@@ -436,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/16/custom-css-reset/" rel="prev" title="常用的input默认样式重置">
-                常用的input默认样式重置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -569,6 +582,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#otherWindow"><span class="nav-number">1.</span> <span class="nav-text">otherWindow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#message"><span class="nav-number">2.</span> <span class="nav-text">message</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#targetOrigin"><span class="nav-number">3.</span> <span class="nav-text">targetOrigin</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
