@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  295
+                  301
                 </span>
               
 
@@ -385,7 +385,7 @@
 <p>遗憾的是，只有Firefox与chrome支持download属性</p>
 </blockquote>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> url = <span class="string">'xxxx'</span>;   <span class="comment">// ajax 请求到的文件链接地址</span></div><div class="line"><span class="keyword">let</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">a.setAttribute(<span class="string">'href'</span>, url + name);</div><div class="line">a.setAttribute(<span class="string">'download'</span>, <span class="string">''</span>);</div><div class="line"><span class="keyword">let</span> evObj = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</div><div class="line">evObj.initEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>);</div><div class="line">a.dispatchEvent(evObj);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">'xxxx'</span>;   <span class="comment">// ajax 请求到的文件链接地址</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">a.setAttribute(<span class="string">'href'</span>, url + name);</span><br><span class="line">a.setAttribute(<span class="string">'download'</span>, <span class="string">''</span>);</span><br><span class="line"><span class="keyword">let</span> evObj = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</span><br><span class="line">evObj.initEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">a.dispatchEvent(evObj);</span><br></pre></td></tr></table></figure>
 <p>这其中使用了createEvent()方法创建了新的Event对象，createEvent对象语法如下:</p>
 <blockquote>
 <p>createEvent(eventType)</p>
@@ -404,7 +404,7 @@
 </tr>
 </tbody>
 </table>
-<p>该方法将创建一种新的事件类型，该类型由参数 eventType 指定。注意，该参数的值不是要创建的事件接口的名称，而是定义那个接口的 DOM 模块的名称。<br>具体参数可以查看<a href="http://www.w3school.com.cn/xmldom/met_document_createevent.asp" target="_blank" rel="external">w3School</a><br>关于自定义Event对象，有很多相关的文章，感兴趣的可以自行搜索哦</p>
+<p>该方法将创建一种新的事件类型，该类型由参数 eventType 指定。注意，该参数的值不是要创建的事件接口的名称，而是定义那个接口的 DOM 模块的名称。<br>具体参数可以查看<a href="http://www.w3school.com.cn/xmldom/met_document_createevent.asp" target="_blank" rel="noopener">w3School</a><br>关于自定义Event对象，有很多相关的文章，感兴趣的可以自行搜索哦</p>
 
       
     </div>
@@ -518,7 +518,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

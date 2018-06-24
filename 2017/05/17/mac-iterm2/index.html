@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  723
+                  734
                 </span>
               
 
@@ -387,11 +387,11 @@
 
       
         <p><img src="http://og20v8qdj.bkt.clouddn.com/iterm2.jpg" alt=""><br>iTerm2是Mac上的一款很强大的终端工具，其与oh-my-zsh搭配使得终端可以高度自定义。上图为oh-my-zsh的agnoster主题， 个人比较喜欢故而一直在使用。本文将从头开始一步步搭建属于自己的终端。<br><a id="more"></a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先，我们进入iTerm2的官网下载相关版本<a href="http://www.iterm2.com/downloads.html" target="_blank" rel="external">跳转链接</a>，建议下载3.0.15稳定版。起初下载了最新版本3.1.x，发现新版的hotkey window相关功能发生了很大变化，不是很喜欢所以又换回了3.0版本。@.@</p>
-<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p>安装完成之后，我们进入命令行将当前的shell改成zsh，之后使用curl下载oh-my-zsh.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ chsh -s /bin/zsh</div><div class="line">$ sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</div></pre></td></tr></table></figure></p>
-<p>安装完成之后会默认使用robbyrussell主题。我个人比较喜欢agnoster字体，所以在终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi ~/.zshrc</div></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先，我们进入iTerm2的官网下载相关版本<a href="http://www.iterm2.com/downloads.html" target="_blank" rel="noopener">跳转链接</a>，建议下载3.0.15稳定版。起初下载了最新版本3.1.x，发现新版的hotkey window相关功能发生了很大变化，不是很喜欢所以又换回了3.0版本。@.@</p>
+<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p>安装完成之后，我们进入命令行将当前的shell改成zsh，之后使用curl下载oh-my-zsh.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chsh -s /bin/zsh</span><br><span class="line">$ sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure></p>
+<p>安装完成之后会默认使用robbyrussell主题。我个人比较喜欢agnoster字体，所以在终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.zshrc</span><br></pre></td></tr></table></figure></p>
 <p>找到ZSH_THEME = “robbyrussell” 将其注释，另起一行重新输入ZSH_THEME = “angoster”或者直接将robbyrussell改成angoster也可以(本人更喜欢注释，哈哈)。<br><img src="http://og20v8qdj.bkt.clouddn.com/hotkey.png" alt="快捷窗口设置"><br>本以为这样就可以了，结果重启终端后发现出现了乱码。我还是too naive了…根据git上相关提示，发现还需要安装字体才能正常显示出我们想要的效果来。</p>
-<h3 id="安装powerline-fonts"><a href="#安装powerline-fonts" class="headerlink" title="安装powerline fonts"></a>安装powerline fonts</h3><p>接下来我们安装相关字体，命令如下所示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># clone</div><div class="line">git clone https://github.com/powerline/fonts.git</div><div class="line"># install</div><div class="line">cd fonts</div><div class="line">./install.sh</div><div class="line"># clean-up a bit</div><div class="line">cd ..</div><div class="line">rm -rf fonts</div></pre></td></tr></table></figure></p>
+<h3 id="安装powerline-fonts"><a href="#安装powerline-fonts" class="headerlink" title="安装powerline fonts"></a>安装powerline fonts</h3><p>接下来我们安装相关字体，命令如下所示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># clone</span><br><span class="line">git clone https://github.com/powerline/fonts.git</span><br><span class="line"># install</span><br><span class="line">cd fonts</span><br><span class="line">./install.sh</span><br><span class="line"># clean-up a bit</span><br><span class="line">cd ..</span><br><span class="line">rm -rf fonts</span><br></pre></td></tr></table></figure></p>
 <p>至此，相关安装流程结束👏，接下来我们进行iTerm2相关的配置流程。附上agnoster配置完成后的终端图<br><img src="http://og20v8qdj.bkt.clouddn.com/agnoster.png" alt=""></p>
 <h2 id="iTerm2-配置"><a href="#iTerm2-配置" class="headerlink" title="iTerm2 配置"></a>iTerm2 配置</h2><h3 id="修改字体"><a href="#修改字体" class="headerlink" title="修改字体"></a>修改字体</h3><p>首先我们选择iTerm2–Preferences–Profiles–Text 之后找到并点击Change Font，选择一个Powerline相关的字体即可。选好之后重启终端即可完成agnoster的配置。<br><img src="http://og20v8qdj.bkt.clouddn.com/iTerm-config.png" alt=""><br>agnoster相关的配置这样就算完成了。不过还没有结束！iTerm2最最最好用的hotkey window还是得稍微说一下的！！</p>
 <h3 id="hotkey-window"><a href="#hotkey-window" class="headerlink" title="hotkey window"></a>hotkey window</h3><p>如果您已经关闭了配置界面，直接安快捷键⌘ + , 进入配置页面。之后选择Keys，勾选hotkey下面的选择框并设置快捷键。如下图所示<br><img src="http://og20v8qdj.bkt.clouddn.com/hotkey.png" alt=""><br>!!! iTerm2 3.1.x 版本虽然热键功能依旧存在，但是没了快捷窗口。本人有点难以理解这一改变(也有可能是我自己不会设置T.T)<br>勾选之后按一下快捷键，窗口就会出现了. 您还可以根据的喜欢去调整相关的透明度等、另外还可以在Profiles的window下给终端配置背景图片等等..总之，iTerm2功能非常强大，只要愿意配置，各种炫酷各种(｡･∀･)ﾉﾞ嗨~~</p>
@@ -522,7 +522,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
