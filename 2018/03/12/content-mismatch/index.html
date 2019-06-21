@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Tony&#39; s home">
 <meta property="og:description" content="今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：12018/03/12 11:36:52 [crit] 26908#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T07:35:26.853Z">
+<meta property="og:updated_time" content="2019-06-21T03:28:08.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决通过nginx访问单页面应用出现net::ERR_CONTENT_LENGTH_MISMATCH的问题">
 <meta name="twitter:description" content="今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：12018/03/12 11:36:52 [crit] 26908#">
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  240
+                  275
                 </span>
               
 
@@ -380,12 +380,8 @@
       
 
       
-        <p>今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2018/03/12 11:36:52 [crit] 26908#0: *82084 open() &quot;/usr/local/var/run/nginx/proxy_temp/8/02/0000000028&quot; failed (13: Permission denied) while reading upstream, client: 192.168.24.112, server: 192.168.24.112, request: &quot;GET /dev/app.js HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8031/app.js&quot;, host: &quot;192.168.24.112:8083&quot;, referrer: &quot;http://192.168.24.112:8083/dev/&quot;</span><br></pre></td></tr></table></figure></p>
-<p>如错误日志所示，没有proxy_temp读写权限所导致的问题；后来查了一下，因为nginx会缓存大文件到proxy_temp目录中所以没有读写权限就会出现该错误。<br>对应的解决方法：</p>
-<ul>
-<li>使用chmod去将proxy_temp的权限改为rwx</li>
-<li>使用chown去修改目录的owner为root，之后使用管理员权限运行nginx(sudo nginx)</li>
-</ul>
+        <p>今天遇到一个问题，新项目启动之后在console出现只有一行net::ERR_CONTENT_LENGTH_MISMATCH的报错，没有其他信息；项目使用nginx做了反向代理，所以查看了一下nginx的错误日志(MacOS下nginx日志位置 /usr/local/var/log/nginx/error.log)，发现错误如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2018/03/12 11:36:52 [crit] 26908#0: *82084 open() &quot;/usr/local/var/run/nginx/proxy_temp/8/02/0000000028&quot; failed (13: Permission denied) while reading upstream, client: 192.168.22.122, server: 192.168.22.122, request: &quot;GET /dev/app.js HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8031/app.js&quot;, host: &quot;192.168.22.122:8083&quot;, referrer: &quot;http://192.168.22.122:8083/dev/&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如错误日志所示，没有proxy_temp读写权限所导致的问题；后来查了一下，因为nginx会缓存大文件到proxy_temp目录中所以没有读写权限就会出现该错误。<br>对应的解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 查看当前用户名</span><br><span class="line">whoami</span><br><span class="line"># 根据id获取用户组</span><br><span class="line">id -a user</span><br><span class="line"># 查看当前nginx对应用户uid</span><br><span class="line">ps -ef | grep nginx</span><br><span class="line"># 进入/var/run/nginx页，修改proxy_temp(user:userGroup为上述查询的用户与用户组)</span><br><span class="line">sudo chown -R user:userGroup proxy_temp</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -503,7 +499,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +586,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
