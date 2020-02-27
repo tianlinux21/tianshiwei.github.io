@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="&amp;#8194;&amp;#8194;近期工作碰到了数字加千分符的需求，其实是个很简单的需求不过由于本人开始用的方法出现了个bug所以后来搜了一下，结合自己写的正则一共发现了大约三种实现方法。">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="&amp;#8194;&amp;#8194;近期面试碰到的一道题目，在此记录一下关于css部分的实现。题目大体意思如下：“列表宽度为300px，列表的布局为：左侧为名称，中部为描述，右侧为时间戳格式化后的时间，时间戳小于当前时间则显示已结束。左侧和右侧不定宽且需要尽量显示完整，中部占用剩余空间，内容超宽则用…省略”。(图片待传…)">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字添加千分符">
-<meta property="og:url" content="http://tianlinux21.github.io/2017/11/29/num-symbol/index.html">
+<meta property="og:title" content="关于左右不定宽中间自适应样式的实现">
+<meta property="og:url" content="http://tianlinux21.github.io/2020/02/27/autoresize/index.html">
 <meta property="og:site_name" content="Tony&#39; s home">
-<meta property="og:description" content="&amp;#8194;&amp;#8194;近期工作碰到了数字加千分符的需求，其实是个很简单的需求不过由于本人开始用的方法出现了个bug所以后来搜了一下，结合自己写的正则一共发现了大约三种实现方法。">
+<meta property="og:description" content="&amp;#8194;&amp;#8194;近期面试碰到的一道题目，在此记录一下关于css部分的实现。题目大体意思如下：“列表宽度为300px，列表的布局为：左侧为名称，中部为描述，右侧为时间戳格式化后的时间，时间戳小于当前时间则显示已结束。左侧和右侧不定宽且需要尽量显示完整，中部占用剩余空间，内容超宽则用…省略”。(图片待传…)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T13:09:54.000Z">
+<meta property="og:updated_time" content="2020-02-27T13:49:22.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数字添加千分符">
-<meta name="twitter:description" content="&amp;#8194;&amp;#8194;近期工作碰到了数字加千分符的需求，其实是个很简单的需求不过由于本人开始用的方法出现了个bug所以后来搜了一下，结合自己写的正则一共发现了大约三种实现方法。">
+<meta name="twitter:title" content="关于左右不定宽中间自适应样式的实现">
+<meta name="twitter:description" content="&amp;#8194;&amp;#8194;近期面试碰到的一道题目，在此记录一下关于css部分的实现。题目大体意思如下：“列表宽度为300px，列表的布局为：左侧为名称，中部为描述，右侧为时间戳格式化后的时间，时间戳小于当前时间则显示已结束。左侧和右侧不定宽且需要尽量显示完整，中部占用剩余空间，内容超宽则用…省略”。(图片待传…)">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://tianlinux21.github.io/2017/11/29/num-symbol/"/>
+  <link rel="canonical" href="http://tianlinux21.github.io/2020/02/27/autoresize/"/>
 
 
 
 
 
-  <title>数字添加千分符 | Tony' s home</title>
+  <title>关于左右不定宽中间自适应样式的实现 | Tony' s home</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2017/11/29/num-symbol/">
+    <link itemprop="mainEntityOfPage" href="http://tianlinux21.github.io/2020/02/27/autoresize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tian">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数字添加千分符</h1>
+          <h1 class="post-title" itemprop="name headline">关于左右不定宽中间自适应样式的实现</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T20:51:56+08:00">
-                2017-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-27T21:07:11+08:00">
+                2020-02-27
               </time>
             
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  519
+                  427
                 </span>
               
 
@@ -380,24 +380,11 @@
       
 
       
-        <p>&#8194;&#8194;近期工作碰到了数字加千分符的需求，其实是个很简单的需求不过由于本人开始用的方法出现了个bug所以后来搜了一下，结合自己写的正则一共发现了大约三种实现方法。<br><a id="more"></a><br>第一种方法最为简单也比较意外，第一次知道原来toLocaleString还可以这么用。代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">12332132</span>;</span><br><span class="line">num.toLocaleString(<span class="string">'en-US'</span>);     <span class="comment">// 12,332,132</span></span><br></pre></td></tr></table></figure></p>
-<p>toLocaleString() 方法返回这个数字在特定语言环境下的表示字符串。语法如下：</p>
-<blockquote>
-<p>numObj.toLocaleString([locales [, options]])</p>
-</blockquote>
-<ul>
-<li>locales: 可选. 缩写语言代码(BCP 47 language tag, 例如:cmn-Hans-CN)的字符串或者这些字符串组成的数组.</li>
-<li>options: 可选. 包含一些属性类，具体可根据需求设置。</li>
-</ul>
-<p>这个方法用处很多，Object/String/Array/Date/Number 均可使用此方法。最为常见的用途在Date的使用上。如： new Date().toLocaleString()。</p>
-<p>第二种方法是使用正则，我觉得是三种方法中比较好的一个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result;</span><br><span class="line"><span class="keyword">if</span>(num&gt;<span class="number">1000</span>)&#123;</span><br><span class="line">     <span class="keyword">var</span> reg=<span class="regexp">/(\d&#123;1,3&#125;)(?=(\d&#123;3&#125;)+(?:$|\D))/g</span>; <span class="comment">//转化千分符</span></span><br><span class="line">     num = num+<span class="string">""</span>;</span><br><span class="line">     result = num.replace(reg,<span class="string">"$1,"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>(?=pattern) 非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用</li>
-<li>(?:pattern) 非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。</li>
-</ul>
-<p>第三种方法是本人之前写的，之前出现的诸如’123’会匹配成’,123’的问题，后来经过修改之后也可以使用，不过相对于上面两种方法则较为麻烦，需要先将字符串翻转，之后匹配成功后在进行一次相同的操作。。。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> input = <span class="number">123321</span></span><br><span class="line"><span class="keyword">var</span> reverseStr = (input+<span class="string">''</span>).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">reverseStr = reverseStr.replace(<span class="regexp">/(\d&#123;3&#125;)(?=[^$])/g</span>, <span class="string">'$1,'</span>);</span><br><span class="line"><span class="keyword">return</span> reverseStr.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure></p>
-<p>通过添加(?=[^$])使得此方法也可达到相同的效果，结合上面pattern模式使用[^$]来匹配非终止的三位数字达到目的。</p>
-<p>嗯，完结~</p>
+        <p>&#8194;&#8194;近期面试碰到的一道题目，在此记录一下关于css部分的实现。题目大体意思如下：“列表宽度为300px，列表的布局为：左侧为名称，中部为描述，右侧为时间戳格式化后的时间，时间戳小于当前时间则显示已结束。左侧和右侧不定宽且需要尽量显示完整，中部占用剩余空间，内容超宽则用…省略”。(图片待传…)</p>
+<a id="more"></a>
+<p>此处主要是对于左右不定宽且要显示完整内容且中间占用剩余空间，非常适合使用flex布局来实现。当我们将父标签设置为flex后，内部子元素会变成弹性项，此时只需将中间的元素设置overflow以及text-overflow，那么左右两侧的内容就会自动去压缩中间的内容，从而实现左右不定宽中间占用剩余空间。代码如下(可复制至codepen查看)：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common name"</span>&gt;</span>item.name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common desc"</span>&gt;</span>&#123;item.desc&#125;&#125;321321321<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common time"</span>&gt;</span>item.timeStr<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common name"</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common desc"</span>&gt;</span>&#123;&#123;item.desc&#125;&#125;1233213<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common time"</span>&gt;</span>&#123;&#123;item.timeStr&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common name"</span>&gt;</span>&#123;&#123;item.name&#125;&#125;&#123;&#123;ime&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common desc"</span>&gt;</span>&#123;&#123;item.desc&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"common time"</span>&gt;</span>&#123;&#123;item.timeStr&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 此处不处理浏览器默认的样式 */</span></span><br><span class="line"><span class="selector-class">.list-item</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.common</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* .name, .time &#123;</span></span><br><span class="line"><span class="comment">  flex: 1; 多余</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"><span class="selector-class">.desc</span> &#123;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -427,7 +414,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -440,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/23/biography-franklin/" rel="next" title="《富兰克林自传》——一本朴实无华而又包罗万象的书">
-                <i class="fa fa-chevron-left"></i> 《富兰克林自传》——一本朴实无华而又包罗万象的书
+              <a href="/2018/03/19/cross-origin/" rel="next" title="使用postMessage解决iframe跨域问题">
+                <i class="fa fa-chevron-left"></i> 使用postMessage解决iframe跨域问题
               </a>
             
           </div>
@@ -449,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/27/no-file-warning/" rel="prev" title="LC_CTYPE cannot change locale (UTF-8)错误解决方法">
-                LC_CTYPE cannot change locale (UTF-8)错误解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
